@@ -9,10 +9,53 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <junit-version>4.12</junit-version>
+        <!-- MIND!! Lombok requires newest compiler -->
+        <compiler-version>3.5.1</compiler-version>
+        <junit-version>4.11</junit-version>
         <log4j-version>1.2.17</log4j-version>
         <lombok-version>1.16.8</lombok-version>
+        <lombok-plugin-version>1.14.8.0</lombok-plugin-version>
+        <guava-version>17.0</guava-version>
+        <apache-log4j.version>1.2.14</apache-log4j.version>
+        <file-encoding>UTF-8</file-encoding>
+        <jdk-version>1.7</jdk-version>
     </properties>
+
+    <build>
+        <plugins>
+            <!-- Compiler Start-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler-version}</version>
+                <configuration>
+                    <source>${jdk-version}</source>
+                    <target>${jdk-version}</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- Compiler End-->
+
+            <!-- Lombok Start -->
+           <!-- <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>${lombok-plugin-version}</version>
+                <configuration>
+                    <encoding>${file-encoding}</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>delombok</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>-->
+            <!-- Lombok End -->
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
@@ -29,6 +72,17 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${apache-log4j.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
