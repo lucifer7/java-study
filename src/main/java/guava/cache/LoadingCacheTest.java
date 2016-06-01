@@ -38,6 +38,7 @@ public class LoadingCacheTest {
                                 return key + " loaded. ";
                             }
                         });
+        //loader is executed when using apply() OR get key while absent
 
         cache.put("keys123", "value123");
         cache.put("keys123", "value1245");
@@ -58,6 +59,7 @@ public class LoadingCacheTest {
         try {
             cache.apply("keys128");
             log.info(cache.get("keys128"));
+            log.info(cache.get("keys129"));
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
