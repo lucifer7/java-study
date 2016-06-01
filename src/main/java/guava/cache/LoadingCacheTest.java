@@ -55,6 +55,12 @@ public class LoadingCacheTest {
         }
         cache.put("keys127", "value127");   //over limits, least recently used item will be expelled
         cacheIteratorTest();
+        try {
+            cache.apply("keys128");
+            log.info(cache.get("keys128"));
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 
     //@Test
