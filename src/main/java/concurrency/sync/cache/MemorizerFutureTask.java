@@ -20,6 +20,7 @@ public class MemorizerFutureTask<A, V> implements Computable<A, V> {
 
     @Override
     public V compute(A arg) throws InterruptedException {
+        //TODO: add future task, wait and get result
         return null;
     }
 }

@@ -15,8 +15,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Main {
     @Test
     public void memorizer1Test() {
-        Computable caculator = new ExpensiveFunction();
-        final Computable cache = new MemorizerSync(caculator);
+        Computable calculator = new ExpensiveFunction();
+        final Computable cache = new MemorizerSync(calculator);
 
         for (int i = 0; i < 20; i++) {
             final String arg = RandomUtils.nextLong(100000L, 100015L) + "";
@@ -41,8 +41,8 @@ public class Main {
 
     @Test
     public void memorizer2Test() {
-        Computable caculator = new ExpensiveFunction();
-        final Computable cache = new MemorizerConcurrent(caculator);
+        Computable calculator = new ExpensiveFunction();
+        final Computable cache = new MemorizerConcurrent(calculator);
         final AtomicInteger counter = new AtomicInteger(1);
 
         for (int i = 0; i < 20; i++) {
