@@ -19,6 +19,9 @@ import java.util.concurrent.TimeUnit;
  * Time: 16:55
  **/
 @Log4j
+/*
+不延迟处理
+ */
 public class LoadingCacheTest {
     LoadingCache<String, String> cache;
 

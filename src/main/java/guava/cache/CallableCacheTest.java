@@ -17,6 +17,9 @@ import java.util.concurrent.TimeUnit;
  * Time: 9:46
  **/
 @Log4j
+/*
+需要延迟处理
+ */
 public class CallableCacheTest {
     Cache<String, String> cache;
 
