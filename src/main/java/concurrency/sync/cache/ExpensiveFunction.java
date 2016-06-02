@@ -8,7 +8,7 @@ import java.math.BigInteger;
 public class ExpensiveFunction implements Computable<String, BigInteger> {
     @Override
     public BigInteger compute(String arg) throws InterruptedException {
-        Thread.sleep(1000L);
+        Thread.sleep(5000L);
         return new BigInteger(arg);
     }
 }

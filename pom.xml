@@ -18,7 +18,7 @@
         <guava-version>17.0</guava-version>
         <apache-log4j.version>1.2.14</apache-log4j.version>
         <file-encoding>UTF-8</file-encoding>
-        <common-lang.version>2.6</common-lang.version>
+        <common-lang.version>3.4</common-lang.version>
         <jdk-version>1.7</jdk-version>
     </properties>
 
@@ -68,11 +68,10 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
             <version>${common-lang.version}</version>
         </dependency>
-
     </dependencies>
 
 </project>
