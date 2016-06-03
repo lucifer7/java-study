@@ -13,8 +13,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Log4j
 public class Main {
-    @Test
-    public void memorizer1Test() {
+    //@Test
+    public void memorizerSyncTest() {
         Computable calculator = new ExpensiveFunction();
         final Computable cache = new MemorizerSync(calculator);
 
@@ -39,8 +39,11 @@ public class Main {
         }
     }
 
-    @Test
-    public void memorizer2Test() {
+    /*
+    最坏情况下，线程并发访问缓存，各自计算，缓存无效
+     */
+    //@Test
+    public void memorizerConcurrentTest() {
         Computable calculator = new ExpensiveFunction();
         final Computable cache = new MemorizerConcurrent(calculator);
         final AtomicInteger counter = new AtomicInteger(1);
@@ -59,6 +62,34 @@ public class Main {
                     }
                 }
             }).start();
+        }
+
+        try {
+            System.in.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void memorizerFutureTask() {
+        Computable calculator = new ExpensiveFunction();
+        final Computable cache = new MemorizerFutureTask(calculator);
+
+        for (int i = 0; i < 20; i++) {
+            final String arg = RandomUtils.nextLong(200000L, 200015L) + "";
+
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        log.info(cache.compute(arg));
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            thread.start();
         }
 
         try {
