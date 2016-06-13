@@ -1,10 +1,11 @@
 package util;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.support.config.FastJsonConfig;
 import entity.User;
 import lombok.extern.log4j.Log4j;
 import org.junit.Test;
-import util.fastjson.FastJsonConfig;
+import util.fastjson.FastJsonFeatures;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,7 +20,10 @@ public class FastJsonTest {
         User user = new User();
         user.setName("fastjsonlessss");
 
-        log.info(JSON.toJSONString(user, FastJsonConfig.Feature));    //{"age":0,"name":"fastjsonlessss","nickName":""}
+        FastJsonConfig config = new FastJsonConfig();
+        //config.setFeatures(FastJsonFeatures.Feature);
+
+        log.info(JSON.toJSONString(user, FastJsonFeatures.Feature));    //{"age":0,"name":"fastjsonlessss","nickName":""}
         log.info(JSON.toJSON(user));  //{"name":"fastjsonlessss"}
     }
 }
