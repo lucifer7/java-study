@@ -19,6 +19,6 @@ public class FastJsonTest {
         User user = new User();
         user.setName("fastjsonlessss");
 
-        log.info(JSON.toJSON(user));
+        log.info(JSON.toJSON(user));    //{"name":"fastjsonlessss"}
     }
 }
