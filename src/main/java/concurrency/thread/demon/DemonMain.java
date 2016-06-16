@@ -3,9 +3,8 @@ package concurrency.thread.demon;
 import entity.Event;
 import lombok.extern.log4j.Log4j;
 
-import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,8 +15,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 @Log4j
 public class DemonMain {
     public static void main(String[] args) {
-        Deque<Event> deque = new ArrayDeque<>();    // 20 - 30
-        //ArrayBlockingQueue deque = new ArrayBlockingQueue(100);
+        //@NotThreadSafe
+        //Deque<Event> deque = new ArrayDeque<>();    // 20 - 30
+        Deque<Event> deque = new ConcurrentLinkedDeque<>();     //remain 30 - 27
 
         WriterTask writer = new WriterTask(deque);
         for (int i = 0; i < 3; i++) {
