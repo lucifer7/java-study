@@ -1,6 +1,11 @@
 package concurrency.thread.demon;
 
+import entity.Event;
 import lombok.extern.log4j.Log4j;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.concurrent.ArrayBlockingQueue;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,6 +16,16 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class DemonMain {
     public static void main(String[] args) {
+        Deque<Event> deque = new ArrayDeque<>();    // 20 - 30
+        //ArrayBlockingQueue deque = new ArrayBlockingQueue(100);
 
+        WriterTask writer = new WriterTask(deque);
+        for (int i = 0; i < 3; i++) {
+            Thread thread = new Thread(writer);
+            thread.start();
+        }
+
+        CleanerTask cleaner = new CleanerTask(deque);
+        cleaner.start();
     }
 }
