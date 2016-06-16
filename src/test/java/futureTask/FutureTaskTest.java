@@ -1,4 +1,4 @@
-package concurrency.sync.futureTask;
+package futureTask;
 
 import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang3.RandomUtils;
