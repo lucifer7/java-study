@@ -4,6 +4,7 @@ import entity.Event;
 
 import java.util.Date;
 import java.util.Deque;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,7 +24,15 @@ public class WriterTask implements Runnable {
         for (int i = 0; i < 100; i++) {
             Event event = new Event();
             event.setDate(new Date());
-            event.setEvent("Running thread: " + Thread.currentThread().getId());
+            event.setEvent("Event created by Running thread: " + Thread.currentThread().getId());
+
+            deque.addFirst(event);
+
+            try {
+                TimeUnit.SECONDS.sleep(1L);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
