@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
  * Time: 15:34
  **/
 @Log4j
+// 休眠一段时间，将线程名称写入 result
 public class SearchTask implements Runnable {
     private Result result;
 
@@ -35,6 +36,6 @@ public class SearchTask implements Runnable {
     }
 
     private void doTask() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(RandomUtils.nextInt(0, 10));
+        TimeUnit.SECONDS.sleep(RandomUtils.nextInt(2, 20));
     }
 }

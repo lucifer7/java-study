@@ -12,18 +12,12 @@ import java.util.concurrent.TimeUnit;
  **/
 @Log4j
 public class GroupMain {
-    static ThreadGroup threadGroup = new ThreadGroup("searcher");
-    static Result result = new Result();
-    static SearchTask searchTask = new SearchTask(result);
+    private static ThreadGroup threadGroup = new ThreadGroup("searcher");
+    private static Result result = new Result();
+    private static SearchTask searchTask = new SearchTask(result);
 
     public static void main(String[] args) {
-        /*Thread[] threads = new Thread[10];
-        for (int i = 0; i < 10; i++) {
-            threads[i] = new Thread(searchTask);
-        }
-
-        threadGroup.enumerate(threads);*/
-
+        // INITIAL THREAD AND GROUP
         for (int i = 0; i < 5; i++) {
             Thread thread = new Thread(threadGroup, searchTask);
             thread.start();
@@ -34,6 +28,36 @@ public class GroupMain {
             }
         }
 
+        // CHECK THREAD GROUP INFO
+        log.info("Active count: " + threadGroup.activeCount());
+        log.info("Active Group Count: " + threadGroup.activeGroupCount());
+        threadGroup.list();
 
+        // THREAD ENUMERATE
+        Thread[] threads = new Thread[threadGroup.activeCount()];
+        threadGroup.enumerate(threads);
+        for (Thread thread : threads) {
+            log.info(thread.getName() + " present state: " + thread.getState());
+        }
+
+        // INTERRUPT THREADS
+        //threadGroup.interrupt();
+
+        // CHECK RESULT WHEN FINISH
+        if(waitFinish(threadGroup)) {
+            log.error("Result is: " + result.getName());    //last thread name
+        }
+    }
+
+    private static boolean waitFinish(ThreadGroup threadGroup) {
+        while(threadGroup.activeCount() > 0) {
+            try {
+                log.info("Present result: " + result.getName());
+                Thread.sleep(1000l);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        return true;
     }
 }
