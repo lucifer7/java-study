@@ -2,9 +2,7 @@ package concurrency.executor;
 
 import concurrency.sync.cache.Computable;
 import concurrency.sync.cache.ExpensiveFunction;
-import concurrency.thread.local.SafeTask;
 import lombok.extern.log4j.Log4j;
-import org.apache.commons.lang3.RandomUtils;
 
 import java.util.concurrent.*;
 
@@ -33,7 +31,7 @@ public class ThreadPool {
             Callable c = new Callable() {
                 @Override
                 public Object call() throws Exception {
-                    return caculator.compute("doubi" + RandomUtils.nextLong(0, 1000000));
+                    return caculator.compute("doubi");
                 }
             };
             Future futureTask = executor.submit(c);
