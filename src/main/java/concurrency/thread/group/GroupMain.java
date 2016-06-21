@@ -39,6 +39,7 @@ public class GroupMain {
         for (Thread thread : threads) {
             log.info(thread.getName() + " present state: " + thread.getState());
         }
+        String name = "€";
 
         // INTERRUPT THREADS
         //threadGroup.interrupt();
@@ -47,6 +48,7 @@ public class GroupMain {
         if(waitFinish(threadGroup)) {
             log.error("Result is: " + result.getName());    //last thread name
         }
+
     }
 
     private static boolean waitFinish(ThreadGroup threadGroup) {

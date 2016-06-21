@@ -33,14 +33,20 @@ public class SafeTask implements Runnable {
         /*startDate = new ThreadLocal<>();
         startDate.set(new Date());*/
 
-        log.info(Thread.currentThread().getName() + " starts at: " + startDate.get());
+        int rest = RandomUtils.nextInt(0, 10);
+
+        synchronized(log) {     //Main, use lock this; for threadPoolExecutor, use lock log
+            log.info("Thread id:=" + Thread.currentThread().getId() + ", " + Thread.currentThread().getName() + " starts at: " + startDate.get());
+            log.info("---SLEEP FOR " + rest + " SECONDS. ---");
+        }
 
         try {
-            TimeUnit.SECONDS.sleep(RandomUtils.nextInt(0, 10));
+            TimeUnit.SECONDS.sleep(rest);
         } catch (InterruptedException e) {
+            log.error(Thread.currentThread().getId() + " is interrupted.. ");
             e.printStackTrace();
         }
 
-        log.info(Thread.currentThread().getName() + " end with: " + startDate.get());
+        log.info("Thread id:=" + Thread.currentThread().getId() + ", " + Thread.currentThread().getName() + " end with: " + startDate.get());
     }
 }

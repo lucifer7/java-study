@@ -9,6 +9,7 @@ public class ExpensiveFunction implements Computable<String, BigInteger> {
     @Override
     public BigInteger compute(String arg) throws InterruptedException {
         Thread.sleep(5000L);
-        return new BigInteger(arg);
+        //return new BigInteger(arg);
+        return BigInteger.valueOf(arg.length());
     }
 }
