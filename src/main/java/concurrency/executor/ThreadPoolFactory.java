@@ -19,5 +19,10 @@ public class ThreadPoolFactory {
         return new ThreadPoolExecutor(nThreads, nThreads,
                 0L, TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<Runnable>());
+        //maximumPoolSize and keep-alive time are meaningless
     }
+
+    /*public static ExecutorService newSingleThreadPool() {
+        //return new Executors.FinalizableDelegatedExecutorService();
+    }*/
 }
