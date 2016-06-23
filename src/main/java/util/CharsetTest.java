@@ -1,5 +1,7 @@
 package util;
 
+import lombok.extern.log4j.Log4j;
+
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
@@ -10,6 +12,7 @@ import java.nio.charset.Charset;
  * Date: 2016/6/21
  * Time: 12:35
  **/
+@Log4j
 public class CharsetTest {
 
     public static void main(String[] args) {
@@ -17,6 +20,7 @@ public class CharsetTest {
         System.out.println("file.encoding=" + System.getProperty("file.encoding"));
         System.out.println("Default Charset=" + Charset.defaultCharset());
         System.out.println("Default Charset in Use=" + getDefaultCharSet());
+        log.info("中文");
     }
 
     private static String getDefaultCharSet() {
