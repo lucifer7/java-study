@@ -18,7 +18,10 @@ public class ExThreadGroup extends ThreadGroup {
 
     @Override
     public void uncaughtException(Thread t, Throwable e) {
-
+        log.info("Running threadGroup exception caught---");
+        log.error("Exception occured, " + e.getMessage());
+        log.info("Thread state: " + t.getState());
+        log.error("Thread " + t.getName(), e);
     }
 
 }
