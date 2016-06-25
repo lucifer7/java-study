@@ -6,6 +6,7 @@ import org.apache.commons.lang3.RandomUtils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,12 +24,30 @@ public class BankAccount {
     private String currency;
     private float balance;
 
-    public void withdraw(float amount) {
-        this.balance -= amount;
+    // 提款业务
+    public synchronized void withdraw(float amount) {
+        float temp = balance;
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(10);     //mock network latency
+        } catch (InterruptedException e) {
+            log.error("Withdraw interrupted.", e);
+        }
+        temp -= amount;
+        this.balance = temp;
     }
 
-    public void deposit(float amount) {
-        this.balance += amount;
+    // 取款业务
+    public synchronized void deposit(float amount) {
+        float temp = balance;
+
+        try {
+            TimeUnit.MILLISECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        temp += amount;
+        this.balance = temp;
     }
 
     public float checkBalance() {
