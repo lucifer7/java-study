@@ -1,4 +1,4 @@
-package concurrency.cancel;
+package concurrency.cancelInterrupt.cancel;
 
 import lombok.extern.log4j.Log4j;
 
