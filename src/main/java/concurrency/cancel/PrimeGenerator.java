@@ -1,5 +1,6 @@
 package concurrency.cancel;
 
+import lombok.extern.log4j.Log4j;
 import net.jcip.annotations.GuardedBy;
 import net.jcip.annotations.ThreadSafe;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * 使用 volatile 类型的域来保存取消状态
  */
 @ThreadSafe
+@Log4j
 public class PrimeGenerator implements Runnable {
     @GuardedBy("this")
     private final List<BigInteger> primes = new ArrayList<>();
@@ -26,6 +28,7 @@ public class PrimeGenerator implements Runnable {
                 primes.add(p);
             }
         }
+        log.info(Thread.currentThread().getName() + " is cancelled.");
     }
 
     public void cancel() {
