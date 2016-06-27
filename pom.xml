@@ -74,6 +74,7 @@
             <artifactId>commons-lang3</artifactId>
             <version>${common-lang.version}</version>
         </dependency>
+        <!-- JSON util start -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -84,6 +85,14 @@
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
         </dependency>
+        <!-- JSON util end -->
+        <!-- Java Concurrency In Practice start -->
+        <dependency>
+            <groupId>net.jcip</groupId>
+            <artifactId>jcip-annotations</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <!-- Java Concurrency In Practice end -->
     </dependencies>
 
 </project>
