@@ -38,10 +38,11 @@ public class Doc2Img {
     private static void savePicture(PicturesTable pTable, CharacterRun cr, String picSavePath, String fileName) throws Exception {
         Picture picture = pTable.extractPicture(cr, false);
 
-        String picName = fileName + System.currentTimeMillis() + "_." + picture.suggestPictureType();
+        String picName = fileName.replaceAll("\\..+", "") + "_" + System.currentTimeMillis() + "." + picture.suggestFileExtension();
         OutputStream out = new FileOutputStream(new File(picSavePath + File.separator + picName));
-        System.out.println("Saving picture: " + picName);
         picture.writeImageContent(out);
+
+        System.out.println("Saving picture: " + picName);
     }
 
     public static void main(String[] args) {
