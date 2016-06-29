@@ -1,4 +1,4 @@
-package util.adapter;
+package util.json.adapter;
 
 import com.google.gson.*;
 

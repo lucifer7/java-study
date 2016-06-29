@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import entity.User;
 import lombok.extern.log4j.Log4j;
 import org.junit.Test;
-import util.adapter.StringAdapter;
+import util.json.adapter.StringAdapter;
 
 /**
  * Created with IntelliJ IDEA.

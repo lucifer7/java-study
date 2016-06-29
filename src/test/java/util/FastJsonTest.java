@@ -5,7 +5,7 @@ import com.alibaba.fastjson.support.config.FastJsonConfig;
 import entity.User;
 import lombok.extern.log4j.Log4j;
 import org.junit.Test;
-import util.fastjson.FastJsonFeatures;
+import util.json.fastjson.FastJsonFeatures;
 
 /**
  * Created with IntelliJ IDEA.
