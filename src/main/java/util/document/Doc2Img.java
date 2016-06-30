@@ -14,6 +14,7 @@ import java.io.OutputStream;
 /**
  * Created by lucifer on 2016-6-29.
  * 使用 apache poi 读取 doc 文档，抓取图片并保存到本地
+ * TODO: handle doc 2007+ version
  */
 public class Doc2Img {
     public static void getDocAndPicTable(String path, String picSavePath) throws Exception {
@@ -23,9 +24,10 @@ public class Doc2Img {
 
         PicturesTable pTable = doc.getPicturesTable();
 
-        int titleLength = doc.getSummaryInformation().getTitle().length();
+        //int titleLength = doc.getSummaryInformation().getTitle().length();    //null pointer exception
         int length = doc.characterLength();
-        for (int i = titleLength; i < length - 1; i++) {
+        //for (int i = titleLength; i < length - 1; i++) {
+        for (int i = 0; i < length - 1; i++) {
             Range range = new Range(i, i + 1, doc);
             CharacterRun cr = range.getCharacterRun(0);
             if (pTable.hasPicture(cr)) {
@@ -46,8 +48,8 @@ public class Doc2Img {
     }
 
     public static void main(String[] args) {
-        String path = "C:\\Users\\lucifer\\Desktop\\test.doc";
-        String picSavePath = "d:\\images";
+        String path = "C:\\Users\\DT266\\Desktop\\cookie setting.doc";
+        String picSavePath = "e:\\images";
 
         try {
             getDocAndPicTable(path, picSavePath);
