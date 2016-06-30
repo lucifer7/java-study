@@ -5,6 +5,10 @@ package concurrency.effectiveness;
  * User: Jingyi.Yang
  * Date: 2016/6/27
  * Time: 17:09
+ *
+ * perf stat java -Xms500m -Xmx600m L1CacheMiss
+ *
+ * Q: why do this consumes so much memory ?
  **/
 public class L1CacheMiss {
     private static final int RUNS = 10;
@@ -14,7 +18,7 @@ public class L1CacheMiss {
     private static long[][] longs;
 
     public static void main(String[] args) throws Exception {
-        Thread.sleep(10000);
+        Thread.sleep(1000);
         longs = new long[DIMENSION_1][];
         for (int i = 0; i < DIMENSION_1; i++) {
             longs[i] = new long[DIMENSION_2];

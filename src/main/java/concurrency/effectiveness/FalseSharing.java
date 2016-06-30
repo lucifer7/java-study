@@ -8,6 +8,8 @@ package concurrency.effectiveness;
  *
  * @author carl.yu
  * @since 2016/6/27
+ *
+ * cache line padding
  */
 public class FalseSharing implements Runnable {
     public final static int NUM_THREADS = 4; // change
@@ -69,7 +71,7 @@ public class FalseSharing implements Runnable {
     public final static class VolatileLong
     {
         public volatile long value = 0L;
-        //public long p1, p2, p3, p4, p5, p6; // comment out
+        //public long p1, p2, p3, p4, p5, p6; // comment out    // cache line padding
     }
 
 }
