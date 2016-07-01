@@ -38,6 +38,7 @@ public class FalseSharing implements Runnable {
         //duration = 682356933
         //duration = 2824266320
         //duration = 2959156374
+        //duration = 3619675280     32_bit
     }
 
     private static void runTest() throws InterruptedException
