@@ -13,7 +13,7 @@ import lombok.extern.log4j.Log4j;
  **/
 @Log4j
 public class LoopBlocking {
-    private final static int BLOCK_SIZE = 128;               //L1 data 32k
+    private final static int BLOCK_SIZE = 128;               //L1 data 32k?, L2 is 1024k, L3 is 6144k
     private final static int ARRAY_SIZE = BLOCK_SIZE * 64;
     private static int[][] a = new int[ARRAY_SIZE][ARRAY_SIZE];  //4 byte per cell
     private static int[][] b = new int[ARRAY_SIZE][ARRAY_SIZE];
