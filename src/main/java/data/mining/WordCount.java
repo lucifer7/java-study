@@ -1,4 +1,5 @@
 package data.mining;
+/*
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -12,6 +13,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+*/
 
 import java.io.IOException;
 import java.util.StringTokenizer;
@@ -19,7 +21,7 @@ import java.util.StringTokenizer;
 // http://web.stanford.edu/class/cs246/handouts.html
 public class WordCount {
 
-    public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
+    /*public static class Map extends Mapper<LongWritable, Text, Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
         private static final int UPPER_CASE = 0;
         private static final int LOWER_CASE = 0;
@@ -76,7 +78,7 @@ public class WordCount {
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         job.waitForCompletion(true);
-    }
+    }*/
 
 }
 

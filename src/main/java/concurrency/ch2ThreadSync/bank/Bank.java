@@ -1,4 +1,4 @@
-package concurrency.sync.bank;
+package concurrency.ch2ThreadSync.bank;
 
 import entity.BankAccount;
 
