@@ -1,4 +1,4 @@
-package concurrency.thread.group;
+package concurrency.ch1ThreadMng.thread.group;
 
 import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang3.RandomUtils;

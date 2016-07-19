@@ -1,4 +1,4 @@
-package concurrency.thread.demon;
+package concurrency.ch1ThreadMng.thread.demon;
 
 import entity.Event;
 import lombok.extern.log4j.Log4j;

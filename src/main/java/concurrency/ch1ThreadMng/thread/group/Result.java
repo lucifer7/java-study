@@ -1,4 +1,4 @@
-package concurrency.thread.group;
+package concurrency.ch1ThreadMng.thread.group;
 
 import lombok.Data;
 

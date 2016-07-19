@@ -1,4 +1,4 @@
-package concurrency.thread.local;
+package concurrency.ch1ThreadMng.thread.local;
 
 import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang3.RandomUtils;

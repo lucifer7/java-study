@@ -1,4 +1,4 @@
-package concurrency.thread.local;
+package concurrency.ch1ThreadMng.thread.local;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,6 +1,6 @@
-package concurrency.thread.group.exception;
+package concurrency.ch1ThreadMng.thread.group.exception;
 
-import concurrency.thread.exception.ErrorTask;
+import concurrency.ch1ThreadMng.thread.exception.ErrorTask;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package concurrency.thread.group.exception;
+package concurrency.ch1ThreadMng.thread.group.exception;
 
 import lombok.extern.log4j.Log4j;
 

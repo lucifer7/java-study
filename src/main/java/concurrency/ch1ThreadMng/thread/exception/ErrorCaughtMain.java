@@ -1,4 +1,4 @@
-package concurrency.thread.exception;
+package concurrency.ch1ThreadMng.thread.exception;
 
 /**
  * Created with IntelliJ IDEA.
