@@ -16,7 +16,7 @@ public class PrintQueue {
         lock.lock();
 
         try {
-            Long duration = (long)Math.random() * 1000;
+            Long duration = (long)(Math.random() * 1000);
             System.out.println(Thread.currentThread().getName() + " Duration: " + duration);
             Thread.sleep(duration);
         } catch (InterruptedException e) {
