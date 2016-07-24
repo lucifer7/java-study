@@ -12,10 +12,8 @@ public class PrintJob implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("A doc will print");
-        System.out.println(Thread.currentThread().getName());
+        System.out.println("A doc will print in" + Thread.currentThread().getName());
         printQueue.printJob(new Object());
-        System.out.println("Doc is printed");
-        System.out.println(Thread.currentThread().getName());
+        System.out.println("Doc is printed in " + Thread.currentThread().getName());
     }
 }
