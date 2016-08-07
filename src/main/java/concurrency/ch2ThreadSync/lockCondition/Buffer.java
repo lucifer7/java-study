@@ -13,7 +13,7 @@ public class Buffer {
     private ReentrantLock lock;
     private Condition lines;
     private Condition space;
-    private boolean pendingLines;           //缓存区是否有行  等待新行？
+    private boolean pendingLines;           //等待新行？
 
     public Buffer(int maxSize) {
         this.maxSize = maxSize;
@@ -46,8 +46,9 @@ public class Buffer {
         lock.lock();
 
         try {
-            while (buffer.size() == 0 && hasPendingLines()) {
-                lines.await();
+            //while (buffer.size() == 0 && hasPendingLines()) {
+            while (buffer.size() == 0 && pendingLines) {
+                lines.await();      //release lock before waiting, and re-acquire lock after await returns
             }
             if (hasPendingLines()) {
                 line = buffer.poll();
