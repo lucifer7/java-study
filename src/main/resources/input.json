@@ -1,0 +1,27 @@
+{
+  "context": "context",
+  "cpuUsage": "cpuUsageValue",
+  "name": "thename",
+  "rates": {
+    "definition": [
+      {
+        "key": "name",
+        "type": "string"
+      },
+      {
+        "key": "rate",
+        "type": "double"
+      }
+    ],
+    "rows": [
+      {
+        "name": "thename1",
+        "rate": "therate"
+      },
+      {
+        "name": "thename2",
+        "rate": "therate2"
+      }
+    ]
+  }
+}
