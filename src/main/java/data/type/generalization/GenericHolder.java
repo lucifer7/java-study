@@ -3,7 +3,7 @@ package data.type.generalization;
 import lombok.extern.log4j.Log4j;
 
 /**
- * 泛型版本的Holder
+ * 2. 泛型版本的Holder
  * Created by lucifer on 2016-8-12.
  */
 @Log4j

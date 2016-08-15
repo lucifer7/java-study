@@ -4,7 +4,7 @@ package data.type.generalization;
 import lombok.extern.log4j.Log4j;
 
 /**
- * 模拟泛型的包装类，可以是任意类型
+ * 1. 模拟泛型的包装类，可以是任意类型
  * Created by lucifer on 2016-8-12.
  */
 @Log4j
