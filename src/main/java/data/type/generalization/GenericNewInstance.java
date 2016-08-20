@@ -8,7 +8,7 @@ import java.util.Random;
  * Usage: <b>泛型无法直接创建对象</b>
  * 解决方法：
  * 1. 传递工厂对象，通过其创建新实例
- * 2. 使用模板设计模式 <@see>GenericCreator</@see>
+ * 2. 使用模板设计模式  {@link GenericCreator}
  *
  * @author lucifer
  * @date 2016-8-18
