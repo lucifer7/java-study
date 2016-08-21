@@ -7,11 +7,12 @@ package data.type.generalization.Array;
  * @date 2016-8-20
  * @devide Yoga Pro
  */
-public class GenericArrayItem<T> {
+public class GenericArrayItem<T extends Integer> {
     private T[] array;
 
     public GenericArrayItem(int size) {
         this.array = (T[]) new Object[size];        // 创建泛型数组
+        /* 如果泛型使用通配符，此处将报错 ClassCastException: [Ljava.lang.Object; cannot be cast to [Ljava.lang.Integer; */
     }
 
     public void put(int index, T item) {
