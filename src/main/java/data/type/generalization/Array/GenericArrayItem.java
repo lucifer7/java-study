@@ -28,7 +28,7 @@ public class GenericArrayItem<T> {
 
     public static void main(String[] args) {
         GenericArrayItem<Integer> gai = new GenericArrayItem<Integer>(10);
-        //Integer[] ia = gai.rep();           // [Ljava.lang.Object; cannot be cast to [Ljava.lang.Integer;
+        //Integer[] ia = gai.rep();           // [Ljava.lang.Object; cannot be cast to [Ljava.lang.Integer;  因为Object[] 无法转型为 Integer[]
         gai.put(0, new Integer(10));
         Object[] oa = gai.rep();
         System.out.println(oa[0]);
