@@ -21,7 +21,8 @@ public class FutureData implements Data {
     }
 
     @Override
-    public String getResult() {         // wait till realData is ready
+    // lack synchronized modifier will produce IllegalMonitorStateException
+    public synchronized String getResult() {         // wait till realData is ready
         while (!isReady) {
             try {
                 wait();
