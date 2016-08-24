@@ -10,7 +10,7 @@ import java.util.Queue;
  * @date 2016-8-23
  * @devide Yoga Pro
  */
-public class Worker implements Runnable {
+public abstract class Worker implements Runnable {
     // 任务队列，子任务
     protected Queue<Object> workQueue;
     // 结果集合
@@ -24,9 +24,12 @@ public class Worker implements Runnable {
         this.resultMap = resultMap;
     }
 
-    public Object handle(Object input) {
+    /*public Object handle(Object input) {
         return input;
-    }
+    }*/
+
+    // 具体的任务处理在子类中实现
+    public abstract Object handle(Object input);
 
     @Override
     public void run() {
