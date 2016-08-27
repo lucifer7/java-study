@@ -16,7 +16,12 @@ public class RealData implements Data {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Integer ret = Integer.parseInt(query);
+        Integer ret = null;
+        try {
+            ret = Integer.parseInt(query);
+        } catch (NumberFormatException e) {
+            ret = query.length();
+        }
         this.result = ret*10 + "";
     }
 
