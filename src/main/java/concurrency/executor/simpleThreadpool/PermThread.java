@@ -5,7 +5,7 @@ package concurrency.executor.simpleThreadpool;
  *
  * @author lucifer
  * @date 2016-8-29
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class PermThread extends Thread {
     private ThreadPool pool;            // 线程池

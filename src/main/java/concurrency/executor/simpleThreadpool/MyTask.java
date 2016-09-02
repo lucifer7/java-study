@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author lucifer
  * @date 2016-8-29
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 @Log4j
 public class MyTask implements Runnable {

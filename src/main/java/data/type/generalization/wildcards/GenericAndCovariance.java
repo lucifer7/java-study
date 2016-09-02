@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author lucifer
  * @date 2016-8-21
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class GenericAndCovariance {
     public static void main(String[] args) {

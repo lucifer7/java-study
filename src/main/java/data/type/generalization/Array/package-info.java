@@ -7,7 +7,7 @@
  * {@reference https://segmentfault.com/a/1190000005179147#articleHeader5}
  * @author lucifer
  * @date 2016-8-27
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 package data.type.generalization.Array;
 

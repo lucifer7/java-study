@@ -8,7 +8,7 @@ import java.util.Queue;
  *
  * @author lucifer
  * @date 2016-8-23
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public abstract class Worker implements Runnable {
     // 任务队列，子任务

@@ -9,7 +9,7 @@ import java.util.LinkedList;
  *
  * @author lucifer
  * @date 2016-8-27
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class RequestQueue {
     private LinkedList queue = Lists.newLinkedList();

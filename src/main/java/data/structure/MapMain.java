@@ -9,7 +9,7 @@ import java.util.*;
  *
  * @author lucifer
  * @date 2016-8-16
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 @Log4j
 public class MapMain {

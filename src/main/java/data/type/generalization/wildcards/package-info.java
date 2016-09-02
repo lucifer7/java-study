@@ -3,6 +3,6 @@
  *
  * @author lucifer
  * @date 2016-8-27
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 package data.type.generalization.wildcards;

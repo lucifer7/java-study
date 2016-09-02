@@ -5,7 +5,7 @@ package design.pattern.concurrency.future;
  *
  * @author lucifer
  * @date 2016-8-22
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class FutureData implements Data {
     private boolean isReady = false;

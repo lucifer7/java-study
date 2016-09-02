@@ -8,7 +8,7 @@ import java.util.Vector;
  *
  * @author lucifer
  * @date 2016-8-29
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class ThreadPool {
     private static volatile ThreadPool instance = null;

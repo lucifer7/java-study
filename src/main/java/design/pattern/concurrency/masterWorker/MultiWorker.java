@@ -7,7 +7,7 @@ import java.util.Random;
  *
  * @author lucifer
  * @date 2016-8-24
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class MultiWorker extends Worker {
     @Override

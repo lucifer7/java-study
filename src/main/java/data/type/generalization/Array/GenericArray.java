@@ -8,7 +8,7 @@ import lombok.extern.log4j.Log4j;
  *
  * @author lucifer
  * @date 2016-8-19
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 @Log4j
 public class GenericArray {

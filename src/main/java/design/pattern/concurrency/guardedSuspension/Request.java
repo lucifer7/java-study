@@ -7,7 +7,7 @@ import design.pattern.concurrency.future.Data;
  *
  * @author lucifer
  * @date 2016-8-27
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class Request {
     private String name;

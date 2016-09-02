@@ -8,7 +8,7 @@ package design.pattern.concurrency.guardedSuspension;
  *
  * @author lucifer
  * @date 2016-8-27
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class SuspensionMain {
     public static void main(String[] args) {

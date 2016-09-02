@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author lucifer
  * @date 2016-8-27
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 @Log4j
 public class ClientThread extends Thread {

@@ -15,7 +15,7 @@ import java.util.List;
  * 3. 可以持有原始类型（容器类也能，有自动装箱）
  * @author lucifer
  * @date 2016-8-19
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class GenericList {
     public static final int SIZE = 10;

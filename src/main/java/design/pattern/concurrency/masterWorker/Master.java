@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentLinkedDeque;
  *
  * @author lucifer
  * @date 2016-8-24
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 @Log4j
 public class Master {

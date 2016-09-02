@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author lucifer
  * @date 2016-8-18
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class GenericNewInstance {
     public static void main(String[] args) {

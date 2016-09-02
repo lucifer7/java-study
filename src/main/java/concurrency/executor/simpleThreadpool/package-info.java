@@ -4,6 +4,6 @@
  * 《Java程序性能优化》4.2.2
  * @author lucifer
  * @date 2016-8-29
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 package concurrency.executor.simpleThreadpool;

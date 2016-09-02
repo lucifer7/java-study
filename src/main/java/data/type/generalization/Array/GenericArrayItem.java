@@ -5,7 +5,7 @@ package data.type.generalization.Array;
  *
  * @author lucifer
  * @date 2016-8-20
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class GenericArrayItem<T extends Integer> {
     private T[] array;

@@ -7,7 +7,7 @@ import java.util.Date;
  *
  * @author lucifer
  * @date 2016-8-22
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class Client {
     public Data request(final String query) {

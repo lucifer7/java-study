@@ -8,7 +8,7 @@ import java.util.WeakHashMap;
  * 会在各项操作中调用 expungeStaleEntries() 清理过期表项
  * @author lucifer
  * @date 2016-8-21
- * @devide Yoga Pro
+ * @device Yoga Pro
  */
 public class WeakHashMapMain {
     public static void main(String[] args) {
