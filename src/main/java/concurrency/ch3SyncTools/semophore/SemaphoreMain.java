@@ -1,6 +1,7 @@
 package concurrency.ch3SyncTools.semophore;
 
 /**
+ * 使用信号量控制并发访问多个资源
  * Created by lucifer on 2016-8-7.
  */
 public class SemaphoreMain {

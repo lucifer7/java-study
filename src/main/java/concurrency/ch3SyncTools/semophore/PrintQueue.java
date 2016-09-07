@@ -9,7 +9,7 @@ import java.util.concurrent.Semaphore;
  */
 @Log4j
 public class PrintQueue {
-    public static final int PERMITS = 1;
+    public static final int PERMITS = 2;
     private final Semaphore semaphore;
 
     public PrintQueue() {
