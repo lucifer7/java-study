@@ -6,6 +6,8 @@ import java.util.concurrent.Semaphore;
 
 /**
  * Usage: <b> 基于信号量的有界缓存 </b>
+ * 并发程序的测试
+ * 详见对应的单元测试
  *
  * @user lucifer
  * @date 2016-9-6
@@ -20,7 +22,7 @@ public class BoundedBuffer<E> {
     private int putPosition = 0, takePosition = 0;
 
     public BoundedBuffer(int capacity) {
-        availableItems = new Semaphore(capacity);
+        availableItems = new Semaphore(0);
         availableSpaces = new Semaphore(capacity);
         items = (E[]) new Object[capacity];
     }
@@ -36,13 +38,13 @@ public class BoundedBuffer<E> {
     public void put(E e) throws InterruptedException {
         availableSpaces.acquire();
         doInsert(e);
-        availableSpaces.release();
+        availableItems.release();
     }
 
     public E take() throws InterruptedException {
         availableItems.acquire();
         E item = doExtract();
-        availableItems.release();
+        availableSpaces.release();
         return item;
     }
 
