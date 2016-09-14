@@ -24,6 +24,8 @@
         <fastjson.version>1.2.12</fastjson.version>
         <poi-version>3.14</poi-version>
         <hadoop-version>2.7.2</hadoop-version>
+        <httpclient-version>4.5.2</httpclient-version>
+        <httpcore-version>4.4.5</httpcore-version>      <!-- to Use SSLContexts, httpcore must be above 4.4 -->
         <jdk-version>1.7</jdk-version>
     </properties>
 
@@ -150,5 +152,18 @@
             <scope>provided</scope>
         </dependency>
         <!-- apache hadoop end -->
+        <!-- apache http client start -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>${httpcore-version}</version>
+        </dependency>
+        <!-- apache http client end -->
+
     </dependencies>
 </project>

@@ -15,6 +15,7 @@ public class ErasedTypeEquivalence {
     public static void main(String[] args) {
         Class c1 = new ArrayList<String>().getClass();
         Class c2 = new ArrayList<Integer>().getClass();
+        //Class c3 = new ArrayList<int>().getClass();       // type argument cannot be primitive type
         log.info(c1 == c2);     // output: true
         log.info(c1);           // class java.util.ArrayList
         //泛型擦除到类型的第一个边界，即ArrayList
