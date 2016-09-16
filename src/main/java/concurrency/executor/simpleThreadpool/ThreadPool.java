@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Vector;
 
 /**
- * Usage: <b>线程的实现</b>
+ * Usage: <b>线程池的实现</b>
  *
  * @author lucifer
  * @date 2016-8-29
