@@ -6,7 +6,8 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Usage: <b>并发程序的测试，对于有界队列 BoundedBuffer</b>
+ * Usage: <b> 基本操作与阻塞的测试 </b>
+ * 并发程序的测试，对于有界队列 BoundedBuffer
  *
  * @user lucifer
  * @date 2016-9-8
