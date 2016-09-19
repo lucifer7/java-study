@@ -7,7 +7,9 @@ import java.util.concurrent.Phaser;
 /**
  * Usage: <b> 运行阶段性并发任务，多个同构线程在同一个步骤节点同步，等全部线程到达后再进行下一步 </b>
  * 中途也可以 deregister
- * Phaser 初始化需要指定参与者个数，中途也能再加
+ * 初始化需要指定同步者（parties）个数，中途也能再加
+ * Phaser: a reusable synchronization barrier
+ * parties: initial, register, deregister
  *
  * @author Jingyi.Yang
  *         Date 2016/9/14

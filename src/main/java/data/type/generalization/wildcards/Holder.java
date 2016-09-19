@@ -6,6 +6,7 @@ import entity.generic.Banana;
 import entity.generic.Fruit;
 import entity.generic.Fuji;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,7 +43,7 @@ public class Holder<T> {
         apple.setValue(d);
         //Holder<Fruit> fruit = apple;        //Compile error: Incompatible type, cannot upcast
 
-        Holder<? extends Fruit> fruit = apple;  // Use upward wildcard
+        Holder<? extends Fruit> fruit = apple;  // Use upward wildcard, this is a producer
         Fruit f = apple.getValue();
         d = (Apple) fruit.getValue();
 
@@ -63,12 +64,18 @@ public class Holder<T> {
     }
 }
 
-/* 超类型通配符，Apple 是类型参数的下界 */
+/* 超类型通配符，Apple 是类型参数的下界
+* 可以传递 Apple 和 Apple 的子类型，this is a consumer
+* 那为毛叫下界
+ * 可能：这货是出参，支持逆变，即 appleList 可以 重新赋值为父类型列表*/
 class SuperTypeWildcards {
     static void writeTo(List<? super Apple> apples) {
         apples.add(new Apple());
         apples.add(new Fuji());
          // apples.add(new Fruit());     // 编译错误，找不到合适的方法
+
+        apples = new ArrayList<Fruit>();
+        apples = new ArrayList<Object>();
     }
 }
 
