@@ -16,7 +16,7 @@ public class RunnerMain {
             server.executeTask(task);
         }
 
-        //server.endServer();
-        server.shutdownNow();
+        server.endServer();
+        //server.shutdownNow();
     }
 }

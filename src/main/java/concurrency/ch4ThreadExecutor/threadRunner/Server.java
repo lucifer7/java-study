@@ -17,7 +17,10 @@ public class Server {
     private ThreadPoolExecutor executor;
 
     public Server() {
-        executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+        // 1. 缓存线程池，大小不停增加，不设上限
+        //executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
+        // 2. 固定线程池，大小受限，超出的线程等待
+        executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
     }
 
     public void executeTask(Task task) {
@@ -28,6 +31,7 @@ public class Server {
         log.info("Server: poll size: " + executor.getPoolSize());
         log.info("Server: active count: " + executor.getActiveCount());
         log.info("Server: completed tasks: " + executor.getCompletedTaskCount());
+        log.info("Server: task count: " + executor.getTaskCount());
     }
 
     public void endServer() {
