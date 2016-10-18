@@ -26,6 +26,7 @@
         <hadoop-version>2.7.2</hadoop-version>
         <httpclient-version>4.5.2</httpclient-version>
         <httpcore-version>4.4.5</httpcore-version>      <!-- to Use SSLContexts, httpcore must be above 4.4 -->
+        <mokito-version>1.9.5</mokito-version>
         <jdk-version>1.8</jdk-version>
     </properties>
 
@@ -164,6 +165,11 @@
             <version>${httpcore-version}</version>
         </dependency>
         <!-- apache http client end -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito-version}</version>
+        </dependency>
 
     </dependencies>
 </project>
