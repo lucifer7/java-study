@@ -1,7 +1,6 @@
 package concurrency.test;
 
 import lombok.extern.log4j.Log4j;
-import org.junit.Test;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
