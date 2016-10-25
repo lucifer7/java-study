@@ -4,6 +4,8 @@ import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
 
+import static common.ProjectContants._1MB;
+
 /**
  * Usage: <b> </b>
  * VM args: -Xmx20M -XX:MaxDirectMemorySize=10M
@@ -13,8 +15,6 @@ import java.lang.reflect.Field;
  *         Device Aurora R5
  */
 public class DirectMemoryOom {
-    public static final int _1MB = 1024 * 1024;
-
     public static void main(String[] args) throws IllegalAccessException {
         Field unsafeField = Unsafe.class.getDeclaredFields()[0];
         unsafeField.setAccessible(true);
