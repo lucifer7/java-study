@@ -1,7 +1,9 @@
 package jvm.oom;
 
-import org.mockito.cglib.proxy.Enhancer;
-import org.mockito.cglib.proxy.MethodInterceptor;
+/*import org.mockito.cglib.proxy.Enhancer;
+import org.mockito.cglib.proxy.MethodInterceptor;*/
+
+/* Mind mockito version */
 
 /**
  * Usage: <b> </b>
@@ -12,7 +14,7 @@ import org.mockito.cglib.proxy.MethodInterceptor;
  *         Device Aurora R5
  */
 public class MethodAreaOom {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         while (true) {
             Enhancer enhancer = new Enhancer();
             enhancer.setSuperclass(OOMObject.class);
@@ -20,7 +22,7 @@ public class MethodAreaOom {
             enhancer.setCallback((MethodInterceptor) (obj, method, objects, proxy) -> proxy.invokeSuper(obj, objects));
             enhancer.create();
         }
-    }
+    }*/
 
     static class OOMObject {
 
