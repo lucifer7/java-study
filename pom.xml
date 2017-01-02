@@ -26,7 +26,8 @@
         <hadoop-version>2.7.2</hadoop-version>
         <httpclient-version>4.5.2</httpclient-version>
         <httpcore-version>4.4.5</httpcore-version>      <!-- to Use SSLContexts, httpcore must be above 4.4 -->
-        <mockito-version>2.2.6</mockito-version>
+        <mockito-version>1.9.5</mockito-version>
+        <apache.csv.version>1.4</apache.csv.version>
         <jdk-version>1.8</jdk-version>
     </properties>
 
@@ -80,6 +81,13 @@
             <artifactId>commons-lang3</artifactId>
             <version>${common-lang.version}</version>
         </dependency>
+        <!-- apache csv starts -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>${apache.csv.version}</version>
+        </dependency>
+        <!-- apache csv ends -->
         <!--<dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
