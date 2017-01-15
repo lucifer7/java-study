@@ -9,9 +9,14 @@ import java.util.HashMap;
 
 /**
  * Usage: <b> </b>
- * Name: the name you'd use to dynamically load the class with, like Class.forName
- * Canonical name: used by import statement and uniquely identifies the class, toString()
- * Simple name: not guaranteed to be unique
+ * Name:            the name you'd use to dynamically load the class with, like Class.forName
+ * Canonical name:  used by import statement and uniquely identifies the class, toString()
+ * Simple name:     not guaranteed to be unique
+ *
+ * Name vs. Canonical Name:
+ * 1. Inner class
+ * 2. Anonymous class
+ * 3. Array
  *
  * @author Jingyi.Yang
  *         Date 2016/11/22
@@ -48,6 +53,8 @@ public class ClassNames {
         }.getClass().getCanonicalName());
         System.out.println(new Serializable() {
         }.getClass().getSimpleName());
+
+        System.out.println();
 
         {
             //primitive Array

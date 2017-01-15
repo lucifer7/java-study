@@ -14,21 +14,21 @@ public class Covariant {
 }
 
 class Base {
-    Fruit contravriant(Apple apple) {
+    Fruit covariant(Apple apple) {
         return new Fruit();
     }
 }
 
 class Sub extends Base {
     @Override
-    Apple contravriant(Apple apple) {
+    Apple covariant(Apple apple) {
         return new Apple();
     }
 }
 /*
 class Sub1 extends Base {
     @Override
-    Fruit contravriant(Fruit apple) {
+    Fruit covariant(Fruit apple) {
         return new Apple();
     }
 }*/
