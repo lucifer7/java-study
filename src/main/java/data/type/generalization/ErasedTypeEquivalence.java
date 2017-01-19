@@ -3,6 +3,7 @@ package data.type.generalization;
 import lombok.extern.log4j.Log4j;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Usage: 类型擦除机制，类型参数只存在编译期，运行时不泛型
@@ -22,4 +23,13 @@ public class ErasedTypeEquivalence {
         //字节码中加入了类型转换
 
     }
+}
+
+class OverloadGenric<T, S> {
+    // These 2 method cannot be compiled, both methods have same ERASURE
+    void f(List<T> l){}
+    //void f(List<S> l){}
+
+    void f1(List<T> l){}
+    //String f1(List<S> l){ return null;}
 }
