@@ -4,7 +4,7 @@ import entity.generic.Apple;
 import entity.generic.Fruit;
 
 /**
- * Usage: <b> </b>
+ * Usage: <b> Overriding method can return different type(sub type) as Super </b>
  *
  * @author Jingyi.Yang
  *         Date 2016/10/19
@@ -21,6 +21,7 @@ class Base {
 
 class Sub extends Base {
     @Override
+    /* 协变返回类型，即子类返回比父类方法更窄的类型，since Java 5 */
     Apple covariant(Apple apple) {
         return new Apple();
     }
