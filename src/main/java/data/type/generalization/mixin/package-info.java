@@ -7,6 +7,8 @@
  *
  * Implementation in Java:
  * 1. Use interfaces: {@link data.type.generalization.mixin.InterfaceMixin}
+ * 2. Use Decorator Pattern: {@link data.type.generalization.mixin.DecoratorMixin}
+ * 3.
  *
  * @author lucifer
  * Date 2017-2-3
