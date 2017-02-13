@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * Usage: <b> </b>
+ * Usage: <b> Class and array class names </b>
  * Name:            the name you'd use to dynamically load the class with, like Class.forName
  * Canonical name:  used by import statement and uniquely identifies the class, toString()
  * Simple name:     not guaranteed to be unique
@@ -53,8 +53,6 @@ public class ClassNames {
         }.getClass().getCanonicalName());
         System.out.println(new Serializable() {
         }.getClass().getSimpleName());
-
-        System.out.println();
 
         {
             //primitive Array

@@ -32,8 +32,8 @@ public class SubListGc {
         //System.gc();
         Runtime.getRuntime().gc();
         TimeUnit.SECONDS.sleep(10L);
-        //System.out.println(subList);
-        //System.out.println(backList);
+        System.out.println(subList);
+        System.out.println(backList);
         //System.out.println(weakReference);
     }
 }
