@@ -5,6 +5,7 @@
  * 3. 运行多个任务，处理首个结果, using ExecutorService.invokeAny(), {@link concurrency.ch4ThreadExecutor.multiRunnerResult.MultiRunnerMain}
  * 4. 运行多个任务，处理所有结果, using ExecutorService.invokeAll(), {@link concurrency.ch4ThreadExecutor.multiRunnerAllResult.RunnerAllResultsMain}
  * 5. 延迟执行任务, ScheduleExecutorService, {@link concurrency.ch4ThreadExecutor.delayedRunner.DelayedRunnerMain}
+ * 6. 定时执行任务, ScheduleExecutorService.scheduleAtFixRate, {@link concurrency.ch4ThreadExecutor.ScheduledRunner.ScheduledRunnerMain}
  *
  * @author lucifer
  * Date 2016-9-27
