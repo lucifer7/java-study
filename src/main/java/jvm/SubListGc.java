@@ -1,11 +1,8 @@
 package jvm;
 
 import com.google.common.collect.Lists;
-import entity.User;
+import common.entity.User;
 
-import java.lang.ref.SoftReference;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 

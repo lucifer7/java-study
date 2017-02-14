@@ -1,10 +1,10 @@
 package data.type.generalization.wildcards;
 
 import com.google.common.collect.Lists;
-import entity.generic.Apple;
-import entity.generic.Banana;
-import entity.generic.Fruit;
-import entity.generic.Fuji;
+import common.entity.generic.Apple;
+import common.entity.generic.Banana;
+import common.entity.generic.Fruit;
+import common.entity.generic.Fuji;
 
 import java.util.ArrayList;
 import java.util.List;

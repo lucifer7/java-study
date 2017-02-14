@@ -1,4 +1,4 @@
-package entity.generic;
+package common.entity.generic;
 
 /**
  * Usage: <b> </b>
@@ -7,5 +7,5 @@ package entity.generic;
  * @date 2016-8-21
  * @device Yoga Pro
  */
-public class Apple extends Fruit {
+public class Banana extends Fruit {
 }

@@ -1,6 +1,6 @@
 package concurrency.ch2ThreadSync.bank;
 
-import entity.BankAccount;
+import common.entity.BankAccount;
 
 /**
  * Created by lucifer on 2016-6-25.

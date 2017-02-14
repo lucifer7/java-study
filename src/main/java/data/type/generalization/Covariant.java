@@ -1,7 +1,7 @@
 package data.type.generalization;
 
-import entity.generic.Apple;
-import entity.generic.Fruit;
+import common.entity.generic.Apple;
+import common.entity.generic.Fruit;
 
 /**
  * Usage: <b> Overriding method can return different type(sub type) as Super </b>

@@ -2,7 +2,7 @@ package util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import entity.User;
+import common.entity.User;
 import lombok.extern.log4j.Log4j;
 import org.junit.Test;
 import util.json.adapter.StringAdapter;

@@ -1,4 +1,4 @@
-package encrypt;
+package data.encrypt;
 
 /**
  * <B>系统名称：</B><BR>

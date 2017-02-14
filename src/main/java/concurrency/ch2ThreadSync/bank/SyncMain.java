@@ -1,6 +1,6 @@
 package concurrency.ch2ThreadSync.bank;
 
-import entity.BankAccount;
+import common.entity.BankAccount;
 import lombok.extern.log4j.Log4j;
 
 /**

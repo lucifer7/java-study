@@ -1,7 +1,7 @@
 package data.type.generalization.wildcards;
 
-import entity.generic.Apple;
-import entity.generic.Fruit;
+import common.entity.generic.Apple;
+import common.entity.generic.Fruit;
 import lombok.extern.log4j.Log4j;
 
 import java.util.ArrayList;

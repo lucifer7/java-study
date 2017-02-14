@@ -1,6 +1,6 @@
 package concurrency.ch1ThreadMng.thread.demon;
 
-import entity.Event;
+import common.entity.Event;
 import lombok.extern.log4j.Log4j;
 
 import java.util.Deque;

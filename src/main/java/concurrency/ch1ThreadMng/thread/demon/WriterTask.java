@@ -1,6 +1,6 @@
 package concurrency.ch1ThreadMng.thread.demon;
 
-import entity.Event;
+import common.entity.Event;
 
 import java.util.Date;
 import java.util.Deque;

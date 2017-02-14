@@ -1,9 +1,8 @@
-package encrypt;
+package data.encrypt;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
-import java.nio.charset.Charset;
 import java.security.MessageDigest;
 
 /**

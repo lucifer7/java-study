@@ -2,7 +2,7 @@ package util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
-import entity.User;
+import common.entity.User;
 import lombok.extern.log4j.Log4j;
 import org.junit.Test;
 import util.json.fastjson.FastJsonFeatures;

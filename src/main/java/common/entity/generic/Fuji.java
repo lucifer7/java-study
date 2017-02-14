@@ -1,4 +1,4 @@
-package entity.generic;
+package common.entity.generic;
 
 /**
  * Usage: <b> </b>
