@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
  * Usage: <b> 对象在GC时的自救，但此机会只有一次 </b>
  * 对象的finalize() 方法最多只被系统调用一次
  *
- * VM args: -XX:+PrintGC
+ * VM args: -XX:+PrintGC -XX:+PrintGCDetails
  *
  * @author lucifer
  *         Date 2016-10-23
