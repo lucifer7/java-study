@@ -1,4 +1,4 @@
-package data.structure;
+package data.structure.collection;
 
 import javax.annotation.concurrent.ThreadSafe;
 import java.util.Random;
