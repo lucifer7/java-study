@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Usage: <b> Test Heap OutOfMemoryError </b>
- * VM args: -Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError
+ * VM args: -Xms20m -Xmx20m -XX:+HeapDumpOnOutOfMemoryError -XX:+PrintGC
  *
  * @author lucifer
  *         Date 2016-10-9

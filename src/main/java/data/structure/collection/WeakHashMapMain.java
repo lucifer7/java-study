@@ -1,4 +1,4 @@
-package data.structure;
+package data.structure.collection;
 
 import java.util.Map;
 import java.util.WeakHashMap;
