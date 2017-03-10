@@ -50,4 +50,12 @@ public class MapEntry<K, V> implements Map.Entry<K,V> {
     public int hashCode() {
         return (key == null ? 0 : key.hashCode()) ^ (value == null ? 0 : value.hashCode());
     }
+
+    @Override
+    public String toString() {
+        return "MapEntry{" +
+                key +
+                " = " + value +
+                '}';
+    }
 }
