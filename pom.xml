@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>tj4</module>
+        <module>jdk7-test</module>
     </modules>
 
     <properties>
@@ -105,11 +106,11 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
+       <!-- <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
             <version>4.3</version>
-        </dependency>
+        </dependency>-->
         <!-- project basic util end -->
         <!-- JSON util start -->
         <dependency>
@@ -186,7 +187,7 @@
         <dependency>
             <groupId>mindview</groupId>
             <artifactId>tj4</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>4.0.0</version>
         </dependency>
 
     </dependencies>
