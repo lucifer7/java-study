@@ -1,4 +1,4 @@
-package specification.types;
+package specification.ch4types;
 
 import lombok.extern.slf4j.Slf4j;
 

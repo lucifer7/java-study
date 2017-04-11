@@ -8,4 +8,4 @@
  * @author Jingyi.Yang
  * Date 2017/2/28
  **/
-package specification.types;
+package specification.ch4types;

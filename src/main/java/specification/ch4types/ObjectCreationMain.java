@@ -1,4 +1,4 @@
-package specification.types;
+package specification.ch4types;
 
 /**
  * Usage: <b> Implicit and explicit creation of object, array and string </b>

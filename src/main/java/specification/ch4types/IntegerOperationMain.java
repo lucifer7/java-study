@@ -1,4 +1,4 @@
-package specification.types;
+package specification.ch4types;
 
 /**
  * Usage: <b> ArithmeticException, overflow  </b>

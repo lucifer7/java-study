@@ -1,4 +1,4 @@
-package specification.types;
+package specification.ch4types;
 
 /**
  * Usage: <b> Floating type overflow, underflow, NaN, inexact results of rounding, round towards zero </b>
