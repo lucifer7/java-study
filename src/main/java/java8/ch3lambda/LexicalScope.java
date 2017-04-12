@@ -1,4 +1,4 @@
-package java8.lambda;
+package java8.ch3lambda;
 
 /**
  * Usage: <b> Lambda v.s. anonymous inner class: Lexical scoping(词法作用域) </b>

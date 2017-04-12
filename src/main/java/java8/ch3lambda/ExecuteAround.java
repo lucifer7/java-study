@@ -1,4 +1,4 @@
-package java8.lambda;
+package java8.ch3lambda;
 
 import java.io.*;
 import java.nio.charset.Charset;

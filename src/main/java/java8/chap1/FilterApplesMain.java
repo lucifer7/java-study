@@ -1,9 +1,9 @@
 package java8.chap1;
 
 import com.google.common.collect.Lists;
-import common.entity.Apple;
+import java8.factory.AppleFarm;
+import java8.factory.Apple;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -16,9 +16,10 @@ import java.util.function.Predicate;
  */
 public class FilterApplesMain {
     public static void main(String[] args) {
-        List<Apple> inventory = Arrays.asList(new Apple("green", 80),
+        /*List<Apple> inventory = Arrays.asList(new Apple("green", 80),
                 new Apple("green", 155),
-                new Apple("red", 120));
+                new Apple("red", 120));*/
+        List<Apple> inventory = AppleFarm.genList(5);
 
         List<Apple> greenApples = filterApples(inventory, FilterApplesMain::isGreenApple);
         System.out.println(greenApples);

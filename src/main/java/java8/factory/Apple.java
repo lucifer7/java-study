@@ -1,9 +1,9 @@
-package common.entity;
+package java8.factory;
 
 import lombok.Data;
 
 /**
- * Usage: <b> </b>
+ * Usage: <b> Apple for Java 8 lambda </b>
  *
  * @author lucifer
  *         Date 2017-4-3
@@ -12,9 +12,9 @@ import lombok.Data;
 @Data
 public class Apple {
     private String color;
-    private int weight;
+    private Integer weight;
 
-    public Apple(String color, int weight) {
+    public Apple(String color, Integer weight) {
         this.color = color;
         this.weight = weight;
     }
