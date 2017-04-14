@@ -7,25 +7,36 @@ import com.google.common.collect.Lists;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
+import util.reflect.ReflectUtil;
+import util.reflect.SqlUtil;
+import util.reflect.StringUtil;
 
-import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+import java.lang.reflect.Field;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
+
 
 /**
- * <B>系统名称：</B><BR>
- * <B>模块名称：</B><BR>
+ * <B>系统名称：MSM</B><BR>
+ * <B>模块名称：CSV Tools </B><BR>
  * <B>中文类名：</B><BR>
- * <B>概要说明：</B><BR>
+ * <B>概要说明：provide support for csv parser(using function) and csv list writer </B><BR>
  *
  * @author carl.yu
  * @since 2016/7/22
  */
 public class CsvUtils {
+    private static final Logger LOG = Logger.getLogger(CsvUtils.class);
+
+    private static final String DEFAULT_SEPARATOR = ",";
+
     private CsvUtils() {
     }
 
@@ -33,6 +44,64 @@ public class CsvUtils {
         void check(CSVParser csvFileParser);
     }
 
+    /**
+     * Write list of lines(columns in array) to csv files
+     * @param lines list of lines(columns in array)
+     * @param file result file
+     * @param separator separator to join the columns
+     * @return true if success, false if exception
+     */
+    public static boolean writeLines2Csv(List<String[]> lines, File file, String separator) {
+        if (StringUtils.isBlank(separator)) {
+            separator = DEFAULT_SEPARATOR;
+        }
+
+        List<String> joinedLines = Lists.newArrayListWithCapacity(lines.size());
+        for (String[] line : lines) {
+            joinedLines.add(StringUtil.join(line, separator));
+        }
+
+        return saveFile(file, joinedLines);
+    }
+
+    /**
+     * Write list of beans to csv file
+     * @param list      bean list, ArrayList preferred
+     * @param file      result file
+     * @param clzType   bean type
+     * @return          true if success, false if exception
+     */
+    public static boolean writeList2Csv(List list, File file, Class clzType) {
+        // 1. Filter class fields
+        Field[] fields = ReflectUtil.filterFields(clzType.getDeclaredFields(), true);
+
+        // 2. Generate csv header and lines by reflection
+        String header = SqlUtil.getEntityColumns(fields, false);
+        String[] lines;
+        try {
+            lines = ReflectUtil.genLineFromEntities(list, fields);
+        } catch (IllegalAccessException e) {
+            return false;
+        }
+
+        // 3. Concat csv content
+        List<String> content = Lists.newArrayListWithCapacity(lines.length + 1);
+        content.add(header);
+        Collections.addAll(content, lines);
+
+        // 4. Write content to file
+        return saveFile(file, content);
+    }
+
+    private static boolean saveFile(File file, List<String> content) {
+        try {
+            FileUtils.writeLines(file, content);
+            return true;
+        } catch (IOException e) {
+            LOG.error(e);
+            return false;
+        }
+    }
 
     public static <T> List<T> parseCsv(Reader reader,
                                        Function<CSVRecord, T> converter,
@@ -126,38 +195,5 @@ public class CsvUtils {
         public void setHotelCode(String hotelCode) {
             this.hotelCode = hotelCode;
         }
-    }
-
-    public static void main(String[] args) throws Exception {
-        String fileName = "C:\\Users\\carl.yu\\Desktop\\collection_file_template.csv";
-        FileReader reader = new FileReader(fileName);
-        List<CollectionDef> collectionDefList = CsvUtils.parseCsv(reader, new Function<CSVRecord, CollectionDef>() {
-            @Override
-            public CollectionDef apply(CSVRecord input) {
-                CollectionDef def = new CollectionDef();
-                long number = input.getRecordNumber();
-                String collectionId = input.get("collection_id");
-                //checkNotBlank(collectionId, String.format("row:%d collection_id is empty.", number));
-                def.setCollectionId(collectionId);
-                String collectionName = input.get("collection_name");
-                //checkNotBlank(collectionName, String.format("row:%d column:collection_name is empty.", number));
-                def.setCollectionName(collectionName);
-                String ctyhocn = input.get("ctyhocn");
-                //checkNotBlank(collectionName, String.format("row:%d column:ctyhocn is empty.", number));
-                ctyhocn = ctyhocn.trim();
-                //checkState(ctyhocn.length() == 7, String.format("row:%d column:ctyhocn length must be 7.", number));
-                def.setHotelCode(ctyhocn.toUpperCase());
-                return def;
-            }
-        }, new CsvChecker() {
-            @Override
-            public void check(CSVParser csvFileParser) {
-                Map<String, Integer> headerMap = csvFileParser.getHeaderMap();
-                //checkState(headerMap.containsKey("collection_id"), "csv header must contains collection_id");
-                //checkState(headerMap.containsKey("collection_name"), "csv header must contains collection_name");
-                //checkState(headerMap.containsKey("ctyhocn"), "csv header must contains ctyhocn");
-            }
-        });
-        System.out.println(collectionDefList);
     }
 }

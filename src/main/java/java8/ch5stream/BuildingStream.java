@@ -1,5 +1,9 @@
 package java8.ch5stream;
 
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -10,7 +14,9 @@ import java.util.stream.Stream;
  * @author Jingyi.Yang
  *         Date 2017/4/12
  **/
+@Slf4j
 public class BuildingStream {
+
     public static void main(String[] args) {
         // 1. Stream.of
         Stream<String> names = Stream.of("dou", "ni", "wan");
@@ -35,5 +41,15 @@ public class BuildingStream {
                 .limit(4)
                 //.map(tuple -> tuple[0])
                 .forEach(tuple -> System.out.println(Arrays.toString(tuple)));
+
+        // 5.1 Stream.generate stream of random double
+        Stream.generate(Math::random)
+                .limit(3)
+                .forEach(System.out::println);
+
+        //5.2 Stream.generate steam of int 1
+        IntStream.generate(() -> 1)
+                .limit(4)
+                .forEach(System.out::println);
     }
 }
