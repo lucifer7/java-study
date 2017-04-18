@@ -1,15 +1,17 @@
 package java8.ch5stream;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * Usage: <b> </b>
+ * Usage: <b> Build Stream by 6 ways </b>
  *
  * @author Jingyi.Yang
  *         Date 2017/4/12
@@ -17,7 +19,7 @@ import java.util.stream.Stream;
 @Slf4j
 public class BuildingStream {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // 1. Stream.of
         Stream<String> names = Stream.of("dou", "ni", "wan");
         names.forEach(System.out::println);
@@ -47,9 +49,16 @@ public class BuildingStream {
                 .limit(3)
                 .forEach(System.out::println);
 
-        //5.2 Stream.generate steam of int 1
+        // 5.2 Stream.generate steam of int 1
         IntStream.generate(() -> 1)
                 .limit(4)
                 .forEach(System.out::println);
+
+        // 6. Get stream from file
+        long uniqueWords = Files.lines(Paths.get("/tmp/vm.log"), Charset.defaultCharset())
+                .flatMap(line -> Arrays.stream(line.split(" ")))
+                .distinct()
+                .count();
+        System.out.println("Unique words count: " + uniqueWords);
     }
 }
