@@ -19,5 +19,14 @@ public class StringMain {
 
         int[][] array = new int[4][5];
         log.info(array.getClass());
+
+        String s1 = new String("abc");
+        String s2 = new String("abc");
+        log.info(s1 == s2);     // false
+        log.info(s1.intern() == s2.intern());       // true
+
+        String s3 = "bcd";
+        String s4 = "bcd";
+        log.info(s3 == s4);     // true
     }
 }
