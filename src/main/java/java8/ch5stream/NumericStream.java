@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * Usage: <b> </b>
+ * Usage: <b> Specialized Stream for primitive numbers </b>
  *
  * @author Jingyi.Yang
  *         Date 2017/5/3
