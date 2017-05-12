@@ -16,6 +16,7 @@ public class FloatingPointTypeMain {
 
         System.out.println(0.0 == -0.0);                // Positive zero and negtive zero compare equal
         System.out.println(0.0 > -0.0);
+         System.out.println(Double.compare(0.0, -0.0));      // compare of double doesn't always go right
         System.out.println(2.0 / 0.0);                  // But sometimes they are different, Infinity and -Infinity
         System.out.println(1.0 / -0.0);
 
