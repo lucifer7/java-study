@@ -12,9 +12,9 @@ import lombok.Data;
 public class Transaction {
     public static final String GROCERY = "Grocery";
 
-    private int id;
-    private Trader trader;
-    private int year;
-    private int value;
-    private String type;
+    private final int id;
+    private final Trader trader;
+    private final int year;
+    private final int value;
+    //private final String type;
 }

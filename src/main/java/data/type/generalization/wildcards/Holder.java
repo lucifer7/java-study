@@ -66,16 +66,16 @@ public class Holder<T> {
 
 /* 超类型通配符，Apple 是类型参数的下界
 * 可以传递 Apple 和 Apple 的子类型，this is a consumer
-* 那为毛叫下界
+* 那为毛叫下界?
  * 可能：这货是出参，支持逆变，即 appleList 可以 重新赋值为父类型列表*/
 class SuperTypeWildcards {
     static void writeTo(List<? super Apple> apples) {
         apples.add(new Apple());
         apples.add(new Fuji());
-         // apples.add(new Fruit());     // 编译错误，找不到合适的方法
+         // apples.add(new Fruit());     // 编译错误，找不到合适的方法, can't add Fruit, because apples could refer to an List<Apple>
 
-        apples = new ArrayList<Fruit>();
-        apples = new ArrayList<Object>();
+        apples = new ArrayList<Fruit>();        // such assignment is allowed
+        apples = new ArrayList<Object>();       // such assignment is allowed
     }
 }
 

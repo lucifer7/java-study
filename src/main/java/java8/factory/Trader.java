@@ -10,7 +10,7 @@ import lombok.Data;
  **/
 @Data
 public class Trader {
-    private String name;
-    private String city;
+    private final String name;
+    private final String city;
 
 }
