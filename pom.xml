@@ -33,6 +33,7 @@
         <httpcore-version>4.4.5</httpcore-version>      <!-- to Use SSLContexts, httpcore must be above 4.4 -->
         <mockito-version>1.9.5</mockito-version>
         <apache.csv.version>1.4</apache.csv.version>
+        <disruptor.version>3.2.0</disruptor.version>
         <jdk-version>1.8</jdk-version>
     </properties>
 
@@ -182,6 +183,18 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>${mockito-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>${disruptor.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjdk.jcstress</groupId>
+            <artifactId>jcstress-core</artifactId>
+            <version>0.3</version>
         </dependency>
 
         <dependency>

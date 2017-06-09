@@ -3,6 +3,9 @@ package data.type.generalization;
 import common.entity.generic.Apple;
 import common.entity.generic.Fruit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Usage: <b> Overriding method can return different type(sub type) as Super </b>
  *
@@ -10,7 +13,12 @@ import common.entity.generic.Fruit;
  *         Date 2016/10/19
  **/
 public class Covariant {
-
+    public static void main(String[] args) {
+        List<? extends Object> o = new ArrayList<>();
+        List<?> w = new ArrayList<>();
+        o = w;
+        w = o;
+    }
 }
 
 class Base {
