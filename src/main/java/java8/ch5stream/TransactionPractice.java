@@ -44,7 +44,7 @@ public class TransactionPractice {
                 .map(Trader::getName)
                 .distinct()
                 .sorted()
-                .collect(Collectors.toList()));
+                .collect(Collectors.joining(" ")));
         System.out.println();
 
         // 5. Any trader work in Milan?

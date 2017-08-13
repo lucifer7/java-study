@@ -23,6 +23,9 @@ public class Summarizing {
         System.out.println("Most caloric dish: " + mostCaloricDish());
         System.out.println("Most caloric dish: " + mostCaloricDishByComparator());
 
+        /* Test self-defined Collector */
+        List<Dish> dishes = menu.stream().collect(new ToListCollector<>());
+        System.out.println(dishes);
     }
 
     private static Dish mostCaloricDishByComparator() {
