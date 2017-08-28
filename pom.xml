@@ -11,6 +11,7 @@
     <modules>
         <module>tj4</module>
         <module>jdk7-test</module>
+        <module>distributed-system</module>
     </modules>
 
     <properties>
