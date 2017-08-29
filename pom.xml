@@ -12,35 +12,23 @@
         <module>tj4</module>
         <module>jdk7-test</module>
         <module>distributed-system</module>
+        <module>code-in-action</module>
     </modules>
 
     <properties>
         <!-- MIND!! Lombok requires newest compiler version -->
         <compiler-version>3.5.1</compiler-version>
-        <junit-version>4.11</junit-version>
-        <hamcrest-version>1.3</hamcrest-version>
-        <log4j-version>1.2.17</log4j-version>
+        <file-encoding>UTF-8</file-encoding>
         <lombok-version>1.16.8</lombok-version>
         <!--<lombok-plugin-version>1.14.8.0</lombok-plugin-version>-->
+        <junit-version>4.11</junit-version>
+        <hamcrest-version>1.3</hamcrest-version>
+        <jdk-version>1.8</jdk-version>
+        <log4j-version>1.2.17</log4j-version>
         <guava-version>17.0</guava-version>
-        <file-encoding>UTF-8</file-encoding>
         <common-lang.version>3.4</common-lang.version>
         <commons-collections.version>3.2</commons-collections.version>
-        <gson.version>2.6.2</gson.version>
-        <fastjson.version>1.2.12</fastjson.version>
-        <poi-version>3.14</poi-version>
-        <hadoop-version>2.7.2</hadoop-version>
-        <httpclient-version>4.5.2</httpclient-version>
-        <httpcore-version>4.4.5</httpcore-version>      <!-- to Use SSLContexts, httpcore must be above 4.4 -->
-        <mockito-version>1.9.5</mockito-version>
-        <apache.csv.version>1.4</apache.csv.version>
-        <disruptor.version>3.2.0</disruptor.version>
-        <commons-io.version>2.5</commons-io.version>
-        <commons-net.version>3.6</commons-net.version>
-        <commons-vfs2.version>2.1</commons-vfs2.version>
-        <commons-collections4.version>4.1</commons-collections4.version>
-        <jsch.version>0.1.54</jsch.version>
-        <jdk-version>1.8</jdk-version>
+
     </properties>
 
     <build>
@@ -93,13 +81,6 @@
             <artifactId>commons-lang3</artifactId>
             <version>${common-lang.version}</version>
         </dependency>
-        <!-- apache csv starts -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-csv</artifactId>
-            <version>${apache.csv.version}</version>
-        </dependency>
-        <!-- apache csv ends -->
         <!--<dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
@@ -112,124 +93,5 @@
             <version>${commons-collections.version}</version>
             <scope>compile</scope>
         </dependency>
-
-       <!-- <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpcore</artifactId>
-            <version>4.3</version>
-        </dependency>-->
-        <!-- project basic util end -->
-        <!-- JSON util start -->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>${gson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
-        <!-- JSON util end -->
-        <!-- Java Concurrency In Practice start -->
-        <dependency>
-            <groupId>net.jcip</groupId>
-            <artifactId>jcip-annotations</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <!-- Java Concurrency In Practice end -->
-        <!-- apache poi start -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>${poi-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-scratchpad</artifactId>
-            <version>${poi-version}</version>
-        </dependency>
-        <!-- apache poi end -->
-        <!-- apache hadoop start -->
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-            <version>${hadoop-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-core</artifactId>
-            <version>${hadoop-version}</version>
-        </dependency>       <!-- Cause error: Please check your configuration for mapreduce.framework.name and the correspond server addresses. -->
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-common</artifactId>
-            <version>${hadoop-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
-            <version>${hadoop-version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- apache hadoop end -->
-        <!-- apache http client start -->
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>${httpclient-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpcore</artifactId>
-            <version>${httpcore-version}</version>
-        </dependency>
-        <!-- apache http client end -->
-        <!-- FTP util start -->
-        <dependency>
-            <groupId>commons-net</groupId>
-            <artifactId>commons-net</artifactId>
-            <version>${commons-net.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-vfs2</artifactId>
-            <version>${commons-vfs2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.jcraft</groupId>
-            <artifactId>jsch</artifactId>
-            <version>${jsch.version}</version>
-        </dependency>
-        <!-- FTP util end -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>${commons-collections4.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${mockito-version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.lmax</groupId>
-            <artifactId>disruptor</artifactId>
-            <version>${disruptor.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.openjdk.jcstress</groupId>
-            <artifactId>jcstress-core</artifactId>
-            <version>0.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>mindview</groupId>
-            <artifactId>tj4</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-
     </dependencies>
 </project>

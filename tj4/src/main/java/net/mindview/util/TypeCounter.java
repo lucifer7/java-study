@@ -26,7 +26,7 @@ public class TypeCounter extends HashMap<Class<?>,Integer>{
   }
   public String toString() {
     StringBuilder result = new StringBuilder("{");
-    for(Entry<Class<?>,Integer> pair : entrySet()) {
+    for(Map.Entry<Class<?>,Integer> pair : entrySet()) {
       result.append(pair.getKey().getSimpleName());
       result.append("=");
       result.append(pair.getValue());
