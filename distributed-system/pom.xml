@@ -13,6 +13,7 @@
 
     <properties>
         <zookeeper.version>3.4.10</zookeeper.version>
+        <curator.version>4.0.0</curator.version>
     </properties>
 
     <dependencies>
@@ -20,6 +21,16 @@
             <groupId>org.apache.zookeeper</groupId>
             <artifactId>zookeeper</artifactId>
             <version>${zookeeper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>${curator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-recipes</artifactId>
+            <version>${curator.version}</version>
         </dependency>
 
     </dependencies>

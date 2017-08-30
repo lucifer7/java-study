@@ -8,7 +8,7 @@ import org.apache.zookeeper.ZooDefs;
 import java.io.IOException;
 
 import static zookeeper.original.common.ProjectProperties.ZOOKEEPER_HOST;
-import static zookeeper.original.common.ProjectProperties.ZOOKEEPER_ROOT;
+import static zookeeper.original.common.ProjectProperties.ZOOKEEPER_GROUP;
 
 /**
  * Usage: <b> </b>
@@ -28,7 +28,7 @@ public class JoinGroup extends ConnectionWatcher {
     public static void main(String[] args) throws IOException, InterruptedException, KeeperException {
         JoinGroup joinGroup = new JoinGroup();
         joinGroup.connect(ZOOKEEPER_HOST);
-        joinGroup.join(ZOOKEEPER_ROOT, "world");
+        joinGroup.join(ZOOKEEPER_GROUP, "world");
         Thread.sleep(Long.MAX_VALUE);
     }
 }

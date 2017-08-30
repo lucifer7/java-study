@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.List;
 
 import static zookeeper.original.common.ProjectProperties.ZOOKEEPER_HOST;
-import static zookeeper.original.common.ProjectProperties.ZOOKEEPER_ROOT;
+import static zookeeper.original.common.ProjectProperties.ZOOKEEPER_GROUP;
 
 /**
  * Usage: <b> </b>
@@ -38,7 +38,7 @@ public class DeleteGroup extends ConnectionWatcher {
     public static void main(String[] args) throws IOException, InterruptedException, KeeperException {
         DeleteGroup deleteGroup = new DeleteGroup();
         deleteGroup.connect(ZOOKEEPER_HOST);
-        deleteGroup.delete(ZOOKEEPER_ROOT);
+        deleteGroup.delete(ZOOKEEPER_GROUP);
         deleteGroup.close();
     }
 }

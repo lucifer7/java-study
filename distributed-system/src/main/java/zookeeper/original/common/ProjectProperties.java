@@ -9,5 +9,6 @@ package zookeeper.original.common;
 public class ProjectProperties {
     public static final String ZOOKEEPER_HOST = "10.200.159.50";
     public static final String ZOOKEEPER_PORT = "2181";
-    public static final String ZOOKEEPER_ROOT = "hello";
+    public static final String ZOOKEEPER_GROUP = "hello";
+    public static final String ZOOKEEPER_PATH = "/hello";
 }
