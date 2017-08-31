@@ -17,7 +17,6 @@ import static zookeeper.original.common.ProjectProperties.*;
  **/
 @Slf4j
 public class BasicOperations {
-    private static final String ZK_ADDRESS = ZOOKEEPER_HOST + ":" + ZOOKEEPER_PORT;
 
     public static void main(String[] args) throws Exception {
         // 1 Start connection

@@ -11,4 +11,5 @@ public class ProjectProperties {
     public static final String ZOOKEEPER_PORT = "2181";
     public static final String ZOOKEEPER_GROUP = "hello";
     public static final String ZOOKEEPER_PATH = "/hello";
+    public static final String ZK_ADDRESS = ZOOKEEPER_HOST + ":" + ZOOKEEPER_PORT;
 }
