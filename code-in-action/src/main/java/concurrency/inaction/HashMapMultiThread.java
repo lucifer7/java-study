@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 /**
- * Usage: <b> </b>
+ * Usage: <b> Hashmap may be corrupt when accessed by multiple threads </b>
  *
  * @author lucifer
  *         Date 2017-8-29

@@ -13,11 +13,12 @@
     <properties>
         <gson.version>2.6.2</gson.version>
         <fastjson.version>1.2.12</fastjson.version>
-        <poi-version>3.14</poi-version>
-        <hadoop-version>2.8.1</hadoop-version>
-        <httpclient-version>4.5.2</httpclient-version>
-        <httpcore-version>4.4.5</httpcore-version>      <!-- to Use SSLContexts, httpcore must be above 4.4 -->
-        <mockito-version>1.9.5</mockito-version>
+        <poi.version>3.14</poi.version>
+        <hadoop.version>2.8.1</hadoop.version>
+        <httpclient.version>4.5.2</httpclient.version>
+        <httpcore.version>4.4.5</httpcore.version>      <!-- to Use SSLContexts, httpcore must be above 4.4 -->
+        <commons-httpclient.version>3.1</commons-httpclient.version>
+        <mockito.version>1.9.5</mockito.version>
         <apache.csv.version>1.4</apache.csv.version>
         <disruptor.version>3.2.0</disruptor.version>
         <commons-io.version>2.5</commons-io.version>
@@ -35,12 +36,6 @@
             <version>${apache.csv.version}</version>
         </dependency>
         <!-- apache csv ends -->
-
-        <!-- <dependency>
-             <groupId>org.apache.httpcomponents</groupId>
-             <artifactId>httpcore</artifactId>
-             <version>4.3</version>
-         </dependency>-->
         <!-- project basic util end -->
         <!-- JSON util start -->
         <dependency>
@@ -65,34 +60,34 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
-            <version>${poi-version}</version>
+            <version>${poi.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-scratchpad</artifactId>
-            <version>${poi-version}</version>
+            <version>${poi.version}</version>
         </dependency>
         <!-- apache poi end -->
         <!-- apache hadoop start -->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
-            <version>${hadoop-version}</version>
+            <version>${hadoop.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-core</artifactId>
-            <version>${hadoop-version}</version>
+            <version>${hadoop.version}</version>
         </dependency>       <!-- Cause error: Please check your configuration for mapreduce.framework.name and the correspond server addresses. -->
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-common</artifactId>
-            <version>${hadoop-version}</version>
+            <version>${hadoop.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
-            <version>${hadoop-version}</version>
+            <version>${hadoop.version}</version>
             <scope>provided</scope>
         </dependency>
         <!-- apache hadoop end -->
@@ -100,12 +95,18 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>${httpclient-version}</version>
+            <version>${httpclient.version}</version>
         </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>${commons-httpclient.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
-            <version>${httpcore-version}</version>
+            <version>${httpcore.version}</version>
         </dependency>
         <!-- apache http client end -->
         <!-- FTP util start -->
@@ -133,7 +134,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>${mockito-version}</version>
+            <version>${mockito.version}</version>
         </dependency>
 
         <dependency>
