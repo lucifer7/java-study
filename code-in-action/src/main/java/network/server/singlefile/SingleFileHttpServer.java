@@ -57,7 +57,7 @@ public class SingleFileHttpServer {
             }
 
         } catch (IOException e) {
-            log.error("Start server error");
+            log.error("Start server error", e);
         }
     }
 
@@ -98,11 +98,11 @@ public class SingleFileHttpServer {
     }
 
     public static void main(String[] args) {
-        int port = 80;
+        int port = 88;
         String encoding = "UTF-8";
 
         try {
-            Path path = Paths.get("C:\\Users\\skyvo\\Desktop\\test.txt");
+            Path path = Paths.get("C:\\Users\\DT266\\Desktop\\test.txt");
             byte[] data = Files.readAllBytes(path);
 
             String contentType = URLConnection.getFileNameMap().getContentTypeFor(".txt");

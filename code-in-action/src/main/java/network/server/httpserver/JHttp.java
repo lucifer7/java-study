@@ -10,7 +10,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Usage: <b> </b>
+ * Usage: <b> A server provide file by specified relative path </b>
+ * Do not test with browser, use <b>echo 'GET test.txt HTTP/1.0' | nc IP PORT</b>
  *
  * @author lucifer
  *         Date 2017-12-4
@@ -40,7 +41,7 @@ public class JHttp {
 
             while (true) {
                 Socket socket = serverSocket.accept();
-                new Thread(new RequestProcessor(rootDir, INDEX_FILE, socket)).start();
+                pool.submit(new RequestProcessor(rootDir, INDEX_FILE, socket));
             }
         } catch (IOException e) {
             log.error("Failed to accept connection", e);

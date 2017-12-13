@@ -16,7 +16,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         try {
-            JHttp server = new JHttp(new File("/tmp/"), 8080);
+            JHttp server = new JHttp(new File("/tmp/"), 8090);
             server.start();
         } catch (IOException e) {
             log.error("Failed to start JHttp server", e);

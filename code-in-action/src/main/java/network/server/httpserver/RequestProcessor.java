@@ -92,9 +92,16 @@ public class RequestProcessor implements Runnable {
                 writer.write(html);
                 writer.flush();
             }
-
         } catch (Exception e) {
             log.error("Unexpected error while processing request", e);
+        } finally {
+            if (null != connection) {
+                try {
+                    connection.close();
+                } catch (IOException e) {
+                    log.error("Failed to close connection", e);
+                }
+            }
         }
     }
 
