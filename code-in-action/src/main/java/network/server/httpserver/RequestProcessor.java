@@ -1,12 +1,13 @@
 package network.server.httpserver;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.*;
 import java.net.Socket;
 import java.net.URLConnection;
-import java.nio.file.Files;
+import java.nio.charset.Charset;
 import java.util.Date;
 
 /**
@@ -18,6 +19,7 @@ import java.util.Date;
  */
 @Slf4j
 public class RequestProcessor implements Runnable {
+    private static final String CHARSET = "UTF-8";
     private File rootDir;
     private String indexFile = "index.html";
     private Socket connection;
@@ -44,21 +46,12 @@ public class RequestProcessor implements Runnable {
     public void run() {
         String root = rootDir.getPath();
         try (OutputStream raw = new BufferedOutputStream(connection.getOutputStream());
-             PrintWriter writer = new PrintWriter(raw);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))
+             OutputStreamWriter writer = new OutputStreamWriter(raw, CHARSET);
+             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream(), CHARSET))
         ) {
-            StringBuilder request = new StringBuilder();
-            String line;
-            while (null != (line = reader.readLine())) {
-                request.append(line);
-                //break;
-            }
-
-            String req = request.toString();
-            log.info("Client {} request {}", connection.getRemoteSocketAddress(), req);
-
-            if (StringUtils.isNotBlank(req)) {
-                // respond and return
+            String req = readRequest(reader);
+            if (StringUtils.isBlank(req)) {
+                return;
             }
 
             String[] tokens = req.split("\\s+");
@@ -72,18 +65,14 @@ public class RequestProcessor implements Runnable {
                     writer.flush();
                 } else {
                     String contentType = URLConnection.getFileNameMap().getContentTypeFor(fileName);
-                    byte[] data = Files.readAllBytes(file.toPath());
+                    byte[] data = IOUtils.toByteArray(new FileReader(file), Charset.forName(CHARSET));
                     if (tokens.length > 2) {
                         String version = tokens[2];
                         if (version.startsWith("HTTP/")) {
                             sendHttpHeader(writer, "200 OK", contentType, data.length);
                         }
                     }
-                    byte[] buffer = new byte[2048];
-                    InputStream in = new FileInputStream(file);
-                    while (in.read(buffer) > 0) {
-                        raw.write(buffer);
-                    }
+                    raw.write(data);
                     raw.flush();
                 }
             } else {
@@ -105,7 +94,35 @@ public class RequestProcessor implements Runnable {
         }
     }
 
-    private void sendHttpHeader(PrintWriter writer, String resp, String contentType, int length) throws IOException {
+    /**
+     * Read request string from input
+     *
+     * @param reader buffered input reader
+     * @return request string
+     * @throws IOException if failed while reading
+     */
+    private String readRequest(BufferedReader reader) throws IOException {
+        StringBuilder request = new StringBuilder();
+        String line;
+        while (null != (line = reader.readLine())) {
+            request.append(line);
+        }
+
+        String req = request.toString();
+        log.info("Client {} request {}", connection.getRemoteSocketAddress(), req);
+        return req;
+    }
+
+    /**
+     * Send response http header to writer, with contentType and length specified
+     *
+     * @param writer      output stream writer
+     * @param resp        response
+     * @param contentType content type
+     * @param length      length of data
+     * @throws IOException if failed while writing
+     */
+    private void sendHttpHeader(OutputStreamWriter writer, String resp, String contentType, int length) throws IOException {
         writer.write("HTTP/1.0 " + resp + "\r\n");
         writer.write("Date: " + new Date() + "\r\n");
         writer.write("Server: JHttp server 1.1\r\n");
@@ -114,15 +131,20 @@ public class RequestProcessor implements Runnable {
         writer.flush();
     }
 
-    public String buildHtmlBody(String title, String content) {
-        StringBuilder body = new StringBuilder();
-        body.append("<html><head><title>")
-                .append(title)
-                .append("</title></head>\r\n");
-        body.append("<body><h1>")
-                .append(content)
-                .append("</h1>\r\n");
-        body.append("</body></html>\r\n");
-        return body.toString();
+    /**
+     * Build Html body by given title and content
+     *
+     * @param title   page title
+     * @param content page content
+     * @return html body as string
+     */
+    private String buildHtmlBody(String title, String content) {
+        return "<html><head><title>" +
+                title +
+                "</title></head>\r\n" +
+                "<body><h1>" +
+                content +
+                "</h1>\r\n" +
+                "</body></html>\r\n";
     }
 }
