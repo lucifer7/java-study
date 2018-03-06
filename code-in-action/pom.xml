@@ -21,7 +21,7 @@
         <mockito.version>1.9.5</mockito.version>
         <apache.csv.version>1.4</apache.csv.version>
         <disruptor.version>3.2.0</disruptor.version>
-        <commons-io.version>2.5</commons-io.version>
+        <commons-io.version>2.6</commons-io.version>
         <commons-net.version>3.6</commons-net.version>
         <commons-vfs2.version>2.1</commons-vfs2.version>
         <commons-collections4.version>4.1</commons-collections4.version>
@@ -29,14 +29,23 @@
     </properties>
 
     <dependencies>
-        <!-- apache csv starts -->
+        <!-- apache starts -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
             <version>${apache.csv.version}</version>
         </dependency>
-        <!-- apache csv ends -->
-        <!-- project basic util end -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collections4.version}</version>
+        </dependency>
+        <!-- apache ends -->
         <!-- JSON util start -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -55,6 +64,12 @@
             <artifactId>jcip-annotations</artifactId>
             <version>1.0</version>
         </dependency>
+        <!-- For concurrent annotation -->
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.2</version>
+        </dependency>
         <!-- Java Concurrency In Practice end -->
         <!-- apache poi start -->
         <dependency>
@@ -69,7 +84,7 @@
         </dependency>
         <!-- apache poi end -->
         <!-- apache hadoop start -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
             <version>${hadoop.version}</version>
@@ -78,7 +93,7 @@
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-core</artifactId>
             <version>${hadoop.version}</version>
-        </dependency>       <!-- Cause error: Please check your configuration for mapreduce.framework.name and the correspond server addresses. -->
+        </dependency>       &lt;!&ndash; Cause error: Please check your configuration for mapreduce.framework.name and the correspond server addresses. &ndash;&gt;
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-common</artifactId>
@@ -89,7 +104,7 @@
             <artifactId>hadoop-mapreduce-client-jobclient</artifactId>
             <version>${hadoop.version}</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
         <!-- apache hadoop end -->
         <!-- apache http client start -->
         <dependency>
@@ -127,11 +142,6 @@
         </dependency>
         <!-- FTP util end -->
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-            <version>${commons-collections4.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>${mockito.version}</version>
@@ -154,5 +164,11 @@
             <artifactId>tj4</artifactId>
             <version>4.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+
     </dependencies>
 </project>

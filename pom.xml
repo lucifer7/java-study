@@ -26,7 +26,8 @@
         <jdk-version>1.8</jdk-version>
         <log4j-version>1.2.17</log4j-version>
         <guava-version>17.0</guava-version>
-        <common-lang.version>3.4</common-lang.version>
+        <common-lang.version>2.4</common-lang.version>
+        <common-lang3.version>3.4</common-lang3.version>
         <commons-collections.version>3.2</commons-collections.version>
 
     </properties>
@@ -45,7 +46,6 @@
                 </configuration>
             </plugin>
             <!-- Compiler End-->
-
         </plugins>
     </build>
 
@@ -61,6 +61,12 @@
             <artifactId>hamcrest-all</artifactId>
             <version>${hamcrest-version}</version>
         </dependency>
+        <!-- Log start -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -71,6 +77,7 @@
             <artifactId>lombok</artifactId>
             <version>${lombok-version}</version>
         </dependency>
+        <!-- Log end -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -79,19 +86,18 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>${common-lang.version}</version>
+            <version>${common-lang3.version}</version>
         </dependency>
-        <!--<dependency>
+        <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
-            <version>2.4</version>
-            <scope>compile</scope>
-        </dependency>-->
+            <version>${common-lang.version}</version>
+        </dependency>
         <dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
             <version>${commons-collections.version}</version>
-            <scope>compile</scope>
         </dependency>
+        <!-- project basic util end -->
     </dependencies>
 </project>
