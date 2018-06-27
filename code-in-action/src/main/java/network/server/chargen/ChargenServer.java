@@ -14,7 +14,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * Usage: <b> Channel and Buffer, server side </b>
+ * Usage: <b> Channel and Buffer, server side, use NIO channel </b>
  * 2 channel: server socket channel(Read) and client socket channel(Write)
  *
  * @author lucifer
