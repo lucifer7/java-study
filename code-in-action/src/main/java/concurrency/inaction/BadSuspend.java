@@ -26,6 +26,7 @@ public class BadSuspend {
                 log.info("Lock acquired by {}", getName());
                 Thread.currentThread().suspend();
             }
+            log.info("Lock released by {}", getName());
         }
     }
 
@@ -35,6 +36,8 @@ public class BadSuspend {
         t2.start();
 
         t1.resume();
+        // TimeUnit.SECONDS.sleep(1L);
+        // t2 will acquire lock but won't release, its suspend won't be resumed
         t2.resume();
 
         t1.join();

@@ -5,7 +5,9 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 /**
- * Usage: <b> Hashmap may be corrupt when accessed by multiple threads </b>
+ * Usage: <b> HashMap may be corrupt when accessed by multiple threads </b>
+ * May produces java.lang.ClassCastException: java.util.HashMap$Node cannot be cast to java.util.HashMap$TreeNode when iterate:
+ * a thread tries to treeify a node while the other holds normal node
  *
  * @author lucifer
  *         Date 2017-8-29
